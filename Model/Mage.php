@@ -36,6 +36,15 @@ class Mage
      * @param string $class
      * @return unknown
      */
+    public static function getModel($class)
+    {
+        return \Magento\Framework\App\ObjectManager::getInstance()->create("\LCB\Mage\Model\\" . implode('\\', array_map('ucwords', explode('/', $class))));
+    }
+    
+    /**
+     * @param string $class
+     * @return unknown
+     */
     public static function getSingleton($class)
     {
         return \Magento\Framework\App\ObjectManager::getInstance()->create("\LCB\Mage\Model\\" . implode('\\', array_map('ucwords', explode('/', $class))));

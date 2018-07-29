@@ -23,6 +23,14 @@ class App
     }
     
     /**
+     * @return \Magento\Store\Model\Website
+     */
+    public function getWebsite()
+    {
+        return \Magento\Framework\App\ObjectManager::getInstance()->create(StoreManagerInterface::class)->getWebsite();
+    }
+
+    /**
      * @return \Magento\Framework\Locale\Resolver
      */
     public function getLocale()
