@@ -19,7 +19,7 @@ class Template
     public function beforeToHtml()
     {
         if (!\class_exists('Mage')) {
-            class_alias('\LCB\Mage\Model\Mage', 'Mage');
+            class_alias('\LCB\Mage\Framework\Mage', 'Mage');
         }
     }
 

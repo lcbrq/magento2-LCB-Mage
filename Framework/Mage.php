@@ -8,17 +8,17 @@
  * @author     Silpion Tomasz Gregorczyk <tom@leftcurlybracket.com>
  */
 
-namespace LCB\Mage\Model;
+namespace LCB\Mage\Framework;
 
 class Mage
 {
 
     /**
-     * @return \LCB\Mage\Model\App
+     * @return \LCB\Mage\Framework\App
      */
     public static function app()
     {
-        return \Magento\Framework\App\ObjectManager::getInstance()->create("\LCB\Mage\Model\App");
+        return \Magento\Framework\App\ObjectManager::getInstance()->create("\LCB\Mage\Framework\App");
     }
 
     /**

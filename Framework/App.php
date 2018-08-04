@@ -7,7 +7,7 @@
  * @author     Silpion Tomasz Gregorczyk <tom@leftcurlybracket.com>
  */
 
-namespace LCB\Mage\Model;
+namespace LCB\Mage\Framework;
 
 use Magento\Store\Model\StoreManagerInterface;
 use LCB\Mage\Model\Core\Locale as Locale;
