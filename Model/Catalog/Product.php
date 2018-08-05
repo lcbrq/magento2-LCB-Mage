@@ -12,14 +12,6 @@ namespace LCB\Mage\Model\Catalog;
 class Product extends \Magento\Catalog\Model\Product
 {
 
-    /**
-     * @return string
-     */
-    public function getLocaleCode()
-    {
-        return $this->getLocale();
-    }
-
 }
 
 

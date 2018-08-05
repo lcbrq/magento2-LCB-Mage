@@ -10,7 +10,8 @@
 namespace LCB\Mage\Helper\Checkout;
 
 use Magento\Store\Model\StoreManagerInterface;
-use \Magento\Checkout\Helper\Cart as CartHelper;
+use Magento\Checkout\Helper\Cart as CartHelper;
+use Magento\Framework\Data\Form\FormKey as FormKey;
 
 class Cart
 {
@@ -24,18 +25,26 @@ class Cart
      * @var CartHelper
      */
     protected $cartHelper;
+    
+    /**
+     * FormKey
+     */
+    protected $formKey;
 
     /**
      * @param StoreManagerInterface $storeManager
      * @param CartHelper $cartHelper
+     * @param FormKey $formKey
      */
     public function __construct(
             StoreManagerInterface $storeManager,
-            CartHelper $cartHelper
+            CartHelper $cartHelper,
+            FormKey $formKey
         )
     {
         $this->storeManager = $storeManager;
         $this->cartHelper = $cartHelper;
+        $this->formKey = $formKey;
     }
     
     /**
@@ -46,7 +55,7 @@ class Cart
      */
     public function getAddUrl($product)
     {
-        return $this->cartHelper->getAddUrl($product);
+        return $this->cartHelper->getAddUrl($product) . 'form_key/' . $this->formKey->getFormKey();
     }
     
 }

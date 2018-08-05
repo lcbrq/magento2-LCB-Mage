@@ -17,7 +17,7 @@ class Session
      */
     public static function getFormKey()
     {
-        return '';
+        return \Magento\Framework\App\ObjectManager::getInstance()->create("\Magento\Framework\Data\Form\FormKey")->getFormKey();
     }
-
+    
 }
